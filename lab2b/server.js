@@ -11,8 +11,8 @@ var bodyParser = require('body-parser');
 // Configurable variables section...
 // ------------------------------------------------------------------
 // Web server port
-// If 4041 doesn't work try 9080
-var BASE_PORT = 4041;
+// If 8080 doesn't work try 9080
+var BASE_PORT = 4042;
 
 // Compute the working directory for serving static files
 // makes assumptions about layout of node and directory structure

@@ -1,0 +1,11 @@
+<div ng-click="showSelected()">
+	<header>
+		{{reportItem.date}}
+	</header>
+	<section>
+		Quantity: {{reportItem.quantity}}<br/>
+		Net Profit:{{reportItem.netSale}}<br/>
+		Cost of Goods: {{reportItem.costOfGoods}}<br/>
+	</section>
+	<div ng-transclude></div>
+</div>		

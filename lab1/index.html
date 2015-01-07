@@ -27,16 +27,6 @@
 
 				<!-- Part 1 A: Local scope binding strategy as element directive 
 					connects with di_home-local-directive.js -->
-				<!-- app.directive('diHome', function() {
-					return {
-						restrict: 'EA',
-						scope: {
-							diUrl: '@',
-							diLinkText: '@'
-						}
-						template: '<a href=“{{diUrl}}“ target=“_blank”>{{diLinkText}}</a>'
-					};
-				}); -->
 				<di-home-local di-url="{{diUrl}}" di-link-text="{{diLinkText}}"></di-home-local>
 
 				<!-- Part 1 B: Local scope binding strategy as attribute directive 
@@ -45,16 +35,16 @@
 
 		  		<!-- Part 2 A: Bi-directional scope binding strategy 
 		  			connects with di_home-bi-directional-directive.js -->
-		  		<!-- di-home-bi-directional di-url="diUrl" di-link-text="diLinkText"></di-home-bi-directional -->
+		  		 <di-home-bi-directional di-url="diUrl" di-link-text="diLinkText"></di-home-bi-directional>
 
 				<!-- Part 2 B: One-time binding on diLinkText 
 					connects with di_home-bi-directional-directive.js -->
-		  		<!-- di-home-bi-directional di-url="diUrl" di-link-text="::diLinkText"></di-home-bi-directional -->
+		  		 <di-home-bi-directional di-url="diUrl" di-link-text="::diLinkText"></di-home-bi-directional>
 
 		  		<!-- Part 3: One-time binding on scope object 
 		  			connects with di_home-bi-directional-directive-object.js 
 		  			the one time binding is setup within the directive itself -->
-		  		<!-- di-home-bi-directional-object di-link-args="linkArgs"></di-home-bi-directional-object -->
+		  		 <di-home-bi-directional-object di-link-args="linkArgs"></di-home-bi-directional-object >
 
 		  		<!-- Simple button to change the scoping of the parent -->
 		  		<button ng-click="modifyScopeObject()">Change Parent Scope</button>
