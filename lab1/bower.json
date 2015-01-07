@@ -1,0 +1,28 @@
+{
+  "name": "lemon-aid",
+  "version": "0.0.0",
+  "homepage": "https://github.com/DuCalixte/lemon-aid",
+  "authors": [
+    "Stanley Calixte <DuCalixte@gmail.com>"
+  ],
+  "description": "Lemon-Aide: Helping those lemonade vendors",
+  "main": "index.html",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "angular",
+    "js",
+    "angularjs",
+    "directive",
+    "lab1"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

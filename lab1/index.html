@@ -1,0 +1,71 @@
+<!doctype html>
+<html ng-app="lemonadeApp">
+	<head>
+		<meta charset="utf-8">
+		<title>Lemon-Aide: Helping those lemonade vendors</title>
+		<link rel="stylesheet" href="css/lemonaide.css">
+		<link rel="stylesheet" href="css/report-listing.css">
+		<!-- IE8-HTML5: https://code.google.com/p/html5shiv/ -->
+		<script src="js/libs/html5shiv.js"></script>
+		<script src="js/libs/angular.js"></script>		
+	</head>
+	<body id="index">
+		<header>
+			<h1>Lemon-Aide: Helping those lemonade vendors</h1>
+		</header>
+
+		<section id="report" ng-controller="ReportController">
+			<div lemon-title></div>
+			<section bindonce>
+				<!-- One time binding -->
+				<!-- {{::diLinkText}} -->
+				<span bo-bind="linkArgs.diLinkText"></span>
+				{{diLinkText}}
+				<!-- Use below when dealing with Part 3 -->
+				<!-- {{linkArgs.diLinkText}} -->
+		  		
+
+				<!-- Part 1 A: Local scope binding strategy as element directive 
+					connects with di_home-local-directive.js -->
+				<!-- app.directive('diHome', function() {
+					return {
+						restrict: 'EA',
+						scope: {
+							diUrl: '@',
+							diLinkText: '@'
+						}
+						template: '<a href=“{{diUrl}}“ target=“_blank”>{{diLinkText}}</a>'
+					};
+				}); -->
+				<di-home-local di-url="{{diUrl}}" di-link-text="{{diLinkText}}"></di-home-local>
+
+				<!-- Part 1 B: Local scope binding strategy as attribute directive 
+					connects with di_home-local-directive.js -->
+				<section di-home-local di-url="{{diUrl}}" di-link-text="{{diLinkText}}"></section>
+
+		  		<!-- Part 2 A: Bi-directional scope binding strategy 
+		  			connects with di_home-bi-directional-directive.js -->
+		  		<!-- di-home-bi-directional di-url="diUrl" di-link-text="diLinkText"></di-home-bi-directional -->
+
+				<!-- Part 2 B: One-time binding on diLinkText 
+					connects with di_home-bi-directional-directive.js -->
+		  		<!-- di-home-bi-directional di-url="diUrl" di-link-text="::diLinkText"></di-home-bi-directional -->
+
+		  		<!-- Part 3: One-time binding on scope object 
+		  			connects with di_home-bi-directional-directive-object.js 
+		  			the one time binding is setup within the directive itself -->
+		  		<!-- di-home-bi-directional-object di-link-args="linkArgs"></di-home-bi-directional-object -->
+
+		  		<!-- Simple button to change the scoping of the parent -->
+		  		<button ng-click="modifyScopeObject()">Change Parent Scope</button>
+
+		  	</section>
+		</section>
+		<script src="js/libs/bindonce.js"></script>
+		<script src="js/main.js"></script>	
+		<script src="js/controller/report-controller.js"></script>		
+		<script src="js/directive/di_home-bi-directional-directive.js"></script>
+		<script src="js/directive/di_home-local-directive.js"></script>	
+		<script src="js/directive/di_home-bi-directional-directive-object.js"></script>				
+	</body>
+</html>
