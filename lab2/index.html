@@ -1,0 +1,46 @@
+<!doctype html>
+<html id="data-ng-app" data-ng-app="lemonadeApp">
+	<head>
+		<meta charset="utf-8">
+		<title>Lemon-Aide: Helping those lemonade vendors</title>
+		<link rel="stylesheet" href="css/lemonaide.css">
+		<link rel="stylesheet" href="css/report-listing.css">
+		<!-- IE8-HTML5: https://code.google.com/p/html5shiv/ -->
+		<script src="js/libs/html5shiv.js"></script>
+		<script src="js/libs/angular.js"></script>		
+	</head>
+	<body id="index">
+		<header>
+			<h1>Lemon-Aide: Helping those lemonade vendors</h1>
+		</header>
+
+		<section id="report" ng-controller="ReportController">
+			<div lemon-title></div>
+			<section>
+				<p ng-if="report.selectedReport" ng-class="{error: !report.selectedReport.profitable}">
+					The report created on {{report.selectedReport.date}} shows that month we  
+					<span ng-show="report.selectedReport.profitable"> were profitable</span><span ng-show="!report.selectedReport.profitable"> weren't profitable</span>.
+				</p>
+				<ul>
+					 <li lemon-report-listing-container
+					 	report-item = "sale"
+					 	action="setSelectedReport(selectedReport)" 
+					 	ng-repeat="sale in sales" 
+						class="lemonReportListing"
+					 	ng-class="{odd:$odd}">
+						<lemon-report-listing-footer report-properties="report"></lemon-report-listing-footer>
+					</li>
+				</ul>
+				<p ng-if="report.footerShown" class="legend">
+					<img width="20px" ng-src="{{report.footerImgUrl}}" alt="Good jiorb"  />
+					Over $200 worth of sales
+				</p>
+			</section>
+		</section>
+  		
+		<script src="js/main.js"></script>	
+		<script src="js/controller/report-controller.js"></script>		
+		<script src="js/directive/lemon_title-directive.js"></script>
+		<script src="js/directive/report_listing-directive.js"></script>
+	</body>
+</html>
