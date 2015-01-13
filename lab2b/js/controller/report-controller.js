@@ -10,6 +10,9 @@
  		title: 'Sales History'
  	};
 
+	 $scope.day = '';
+	 $scope.reportItem = {};
+
   //Report information
   $scope.report = {
     limit: 24,
