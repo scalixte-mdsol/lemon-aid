@@ -5,8 +5,8 @@
 app.directive('lemonTitle', function() {
 	return {
 		restrict: 'AE',
-    	replace: true,    
-    	scope: true,
+		replace: true,
+		scope: true,
 		template: '<h2>{{page.title}}</h2>'
 	};
 });
