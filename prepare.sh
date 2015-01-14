@@ -7,3 +7,5 @@ npm install karma-cli
 npm install protractor
 npm install grunt
 
+mkdir -p app/{directives,views,assets/{css,js,libs,img},controllers,models}
+

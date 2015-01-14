@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="lemonadeApp">
+	<head>
+		<meta charset="utf-8">
+		<title>Lemon-Aide: Helping those lemonade vendors</title>
+		<link rel="stylesheet" href="app/assets/css/lemonaide.css">
+		<link rel="stylesheet" href="app/assets/css/report-listing.css">
+		<!-- IE8-HTML5: https://code.google.com/p/html5shiv/ -->
+		<script src="app/assets/libs/html5shiv.js"></script>
+		<script src="app/assets/libs/angular.js"></script>
+	</head>
+	<body id="index">
+		<header>
+			<h1>Lemon-Aide: Helping those lemonade vendors</h1>
+		</header>
+
+		<section ng-controller="ReportController">
+			<!-- What happens when ordering / priority / terminal 
+				are all interacted with ? -->
+			<ul di-fourth di-second di-third di-first></ul>
+
+			<!-- How about this? 
+				What is ng-if's priority?
+				Is it terminal? -->
+			<!-- ul di-third ng-if="true" di-first></ul -->
+		</section>
+		<script src="app/assets/js/main.js"></script>
+		<script src="app/controllers/report-controller.js"></script>
+		<script src="app/directives/di_ordering-directive.js"></script>
+	</body>
+</html>
