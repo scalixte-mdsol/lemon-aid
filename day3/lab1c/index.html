@@ -1,0 +1,38 @@
+<!doctype html>
+<html ng-app="lemonadeApp">
+	<head>
+		<meta charset="utf-8">
+		<title>Lemon-Aide: Helping those lemonade vendors</title>
+		<link rel="stylesheet" href="app/assets/css/lemonaide.css">
+		<link rel="stylesheet" href="app/assets/css/report-listing.css">
+	</head>
+	<body id="index">
+		<!-- Header named view -->
+		<div ui-view="header"></div>
+
+		<!-- AngularJS Directive for template insertion -->
+		<div id="content" ui-view></div>
+		
+		<!-- Footer named view -->
+		<div ui-view="footer"></div>
+  		
+		<script src="app/assets/libs/underscore.js"></script>
+		<script src="app/assets/libs/angular.js"></script>
+		<script src="app/assets/libs/angular-ui-router.js"></script>	
+		<script src="app/assets/js/main.js"></script>
+		<script src="app/assets/js/state/general-states.js"></script>
+		<script src="app/assets/js/state/sell-states.js"></script>
+		<script src="app/assets/js/state/reports-states.js"></script>	
+		<script src="app/assets/js/filters.js"></script>
+		<script src="app/controllers/header-controller.js"></script>	
+		<script src="app/controllers/footer-controller.js"></script>		
+		<script src="app/controllers/home-controller.js"></script>
+		<script src="app/controllers/sell-controller.js"></script>			
+		<script src="app/controllers/product-controller.js"></script>	
+		<script src="app/controllers/report-controller.js"></script>
+		<script src="app/controllers/report_sales-controller.js"></script>			
+		<script src="app/directives/lemon-title-directive.js"></script>
+		<script src="app/directives/report_listing-directive.js"></script>
+		<script src="app/directives/select_date-directive.js"></script>
+	</body>
+</html>

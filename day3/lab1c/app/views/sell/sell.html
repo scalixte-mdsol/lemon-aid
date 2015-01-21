@@ -1,0 +1,43 @@
+<section ng-attr-id="{{page.title | lowercase}}">
+	<div lemon-title></div>
+	<p>
+		<a ui-sref=".lemonade" ui-sref-active="active">
+			Lemonade info
+		</a> | 
+		<a ui-sref=".healthy" ui-sref-active="active">
+			Healthy Snack info
+		</a> |
+		<a ui-sref=".treat" ui-sref-active="active">
+			Treat info
+		</a>
+		<div ui-view></div>
+	</p>
+	<ul id="buttons" ng-controller="ProductController">
+	 	<li ng-click="incrementLargeLemonade()">
+	 		Large glass of lemonade<mark>{{transaction.largeLemonadeQuantity}}</mark>
+	 	</li>
+	 	<li ng-click="incrementMediumLemonade()">
+	 		Medium glass of lemonade<mark>{{transaction.mediumLemonadeQuantity}}</mark>
+ 		</li>
+	 	<li ng-click="incrementHealthySnack()">
+	 		Healthy snack<mark>{{transaction.healthySnackQuantity}}</mark>
+ 		</li>
+	 	<li ng-click="incrementTreat()">
+	 		Treat<mark>{{transaction.treatQuantity}}</mark>
+ 		</li>
+	</ul>	
+	<section>
+	</section>
+	<section>
+		<p id="transactionQuantity">
+			Transaction Quantity: <mark>{{transaction.transactionQuantity}}</mark> products
+		<p>
+		<p id="transactionCost">
+			Transaction Cost: <mark>${{transaction.transactionCost}}.00</mark>
+		<p>
+		<p>
+			<button id="clearTransaction" ng-click="clearTransaction()">Clear Transaction</button>
+		</p>
+
+	</section>
+</section>
